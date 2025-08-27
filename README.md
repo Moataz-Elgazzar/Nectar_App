@@ -184,7 +184,7 @@ lib/
 ## 📸 Screenshots
 
 ![Shop & Explore & Cart ](https://github.com/Moataz-Elgazzar/Nectar_App/blob/main/third_screen.png)
-![Favorite & Account ]([forth_screen.jpg](https://github.com/Moataz-Elgazzar/Nectar_App/blob/main/forth_screen.png))
+![Favorite & Account ](https://github.com/Moataz-Elgazzar/Nectar_App/blob/main/forth_screen.png)
 
 ---
 
