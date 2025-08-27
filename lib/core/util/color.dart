@@ -7,4 +7,6 @@ class AppColor {
   static const Color whiteColor = Color(0xFFFFFFFF);
   static const Color blueyColor = Color(0xFF4A66AC);
   static const Color skyColor = Color(0xFF5383EC);
+  static const Color borderColor = Color(0xFFE2E2E2);
+  static const Color fillColor = Color(0xFFF2F3F2);
 }

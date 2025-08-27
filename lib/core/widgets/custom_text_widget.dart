@@ -3,19 +3,22 @@ import 'package:nectar/core/text/textstyle.dart';
 import 'package:nectar/core/util/color.dart';
 
 class CustomTextWidget extends StatefulWidget {
-  const CustomTextWidget({super.key, this.label, this.prefix, this.suffix, this.validator});
+  const CustomTextWidget({super.key, this.label, this.prefix, this.suffix, this.validator, this.hint, this.fillColor,  this.filled, this.border});
 
   final String? label;
+  final String? hint;
   final Widget? prefix;
   final Widget? suffix;
   final String? Function(String?)? validator;
+  final Color? fillColor;
+  final bool? filled;
+  final BorderRadius? border;
 
   @override
   State<CustomTextWidget> createState() => _CustomTextWidgetState();
 }
 
 class _CustomTextWidgetState extends State<CustomTextWidget> {
-  
   String? errorMessage;
   String? validate(String? value) {
     String? result = widget.validator?.call(value);
@@ -30,6 +33,8 @@ class _CustomTextWidgetState extends State<CustomTextWidget> {
     return TextFormField(
       validator: validate,
       decoration: InputDecoration(
+        fillColor: widget.fillColor,
+        filled: widget.filled,
         prefixIcon: widget.prefix,
         suffixIcon: errorMessage != null
             ? Tooltip(
@@ -48,21 +53,22 @@ class _CustomTextWidgetState extends State<CustomTextWidget> {
               )
             : null,
         labelText: widget.label,
+        hintText: widget.hint,
         labelStyle: AppTextStyle.labelText,
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: widget.border ?? BorderRadius.circular(10),
           borderSide: BorderSide(color: AppColor.PrimaryColor),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: widget.border ?? BorderRadius.circular(10),
           borderSide: BorderSide(color: AppColor.PrimaryColor),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: widget.border ?? BorderRadius.circular(10),
           borderSide: BorderSide(color: Colors.red),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: widget.border ?? BorderRadius.circular(10),
           borderSide: BorderSide(color: Colors.red),
         ),
       ),

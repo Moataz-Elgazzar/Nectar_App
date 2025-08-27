@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:nectar/core/constants/app_images.dart';
 import 'package:nectar/core/functions/navigator.dart';
 import 'package:nectar/core/util/color.dart';
-import 'package:nectar/features/auth/pages/login_screen.dart';
+import 'package:nectar/features/main/main_screen.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -17,7 +17,7 @@ class _SplashState extends State<Splash> {
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
-      pushWithReplacment(context, LoginScreen());
+      pushWithReplacment(context, MainScreen());
     });
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nectar/core/util/color.dart';
 import 'package:nectar/features/splash/splash.dart';
 
 void main() {
@@ -10,6 +11,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: Splash(), debugShowCheckedModeBanner: false);
+    return MaterialApp(
+      theme: ThemeData(
+        scaffoldBackgroundColor: AppColor.whiteColor,
+        appBarTheme: AppBarTheme(backgroundColor: AppColor.whiteColor),
+      ),
+      home: Splash(),
+      debugShowCheckedModeBanner: false,
+    );
   }
 }
